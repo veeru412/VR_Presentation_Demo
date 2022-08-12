@@ -18,8 +18,15 @@ namespace VB
 
     void Update()
     {
-      mTransform.position = _ref.position;
-      mTransform.rotation = _ref.rotation;
+      if (Spawner.isSessionStarted)
+      {
+        mTransform.position = _ref.position;
+        mTransform.rotation = _ref.rotation;
+      }
+      else
+      {
+        mTransform.position = Vector3.back * 100;
+      }
     }
   }
 }
